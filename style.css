@@ -49,6 +49,7 @@ h2{
 }
 
 .dropdown {
+    z-index: 100;
     position: absolute;
     border-radius: 5px;
     overflow: hidden;
