@@ -1,0 +1,176 @@
+*, ::before, ::after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-primary: #e0eaf3;
+    --color-secondary: #292526;
+}
+
+html {
+    background-color: var(--color-primary);
+}
+
+body {
+    font-size: 62.5%;
+    max-width: 1800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    margin-top: 40px;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+}
+
+/* Filter */
+.filter {
+    display: flex;
+    align-items: center;
+    height: 50px;
+    gap: 10px;
+    font-size: clamp(1.4rem, 3vw, 1.4rem);
+    width: 95%;
+    max-width: 1400px; 
+    margin-top: 20px;
+}
+h2{
+    font-weight: 100;
+    font-size: clamp(1.6rem, 3vw, 1.8rem);
+}
+
+.filter_section{
+    position: relative;
+    height: 100%;
+}
+
+.dropdown {
+    position: absolute;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.btn_drop {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--color-secondary);
+}
+
+.btn_drop,
+.dropdown_content li button{
+    width: 100%;
+    height: 50px;
+    padding: 15px;
+    border: none;
+    outline: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: clamp(1.4rem, 3vw, 1.4rem);
+}
+
+.dropdown_content li button {
+    background-color: transparent;
+    text-align: left;
+}
+
+.dropdown_content {
+    max-height: 0;
+    background-color: var(--color-secondary);
+    transition: max-height .2s ease-in-out;
+}
+
+.dropdown_content li {
+    position: relative;
+    width: 160px;
+    list-style-type: none;
+}
+
+.dropdown_content li::before{
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 85%;
+    height: 1px;
+    background-color: #fff;
+}
+
+.dropdown_content li button:hover,
+.btn_drop:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+.active {
+    max-height: 200px;
+}
+
+.rotate{
+    transform: rotate(180deg);
+}
+
+/* Gallery */
+.gallery_container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 40px;
+    width: 95%;
+    max-width: 1400px;
+    padding: 40px 0;
+}
+
+article {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .2);
+    background-color: aliceblue;
+}
+
+.animate {
+    animation: anim .1s ease-in-out;
+}
+
+@keyframes anim {
+    to {
+        transform: translateY(5px);
+    }
+}
+
+article h3 {
+    font-size: clamp(1.6rem, 4vw, 1.8rem);
+    font-weight: 100;
+}
+
+article img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    object-position: center;
+}
+
+article p {
+    align-self: self-end;
+    font-size: clamp(1.4rem, 3vw, 1.6rem);
+}
+
+@media screen and (max-width: 425px) {
+    .gallery_container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 20px 0;
+    }
+
+    article {
+        gap: 5px;
+        padding: 10px;
+    }
+}

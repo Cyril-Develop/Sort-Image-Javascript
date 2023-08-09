@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sort Image Gallery</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+    <h1>Sort Image Gallery</h1>
+
+    <div class="filter">
+        <h2>Sort by</h2>
+        <div class="filter_section">
+            <div class="dropdown">
+                <button class="btn_drop">
+                    <span id="currentSort">Title</span>
+                    <span class="arrow">🔻</span>
+                </button>
+
+                <ul class="dropdown_content">
+                    <li>
+                        <button>Title</button>
+                    </li>
+                    <li>
+                        <button>Popularity</button>
+                    </li>
+                    <li>
+                        <button>Date</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="gallery_container"></div>
+
+    <script src="./app.js" type="module"></script>
+</body>
+</html>
