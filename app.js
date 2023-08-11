@@ -60,6 +60,7 @@ allFilter.forEach(filter => {
         
         sortDatas(filterValue);
         displayDatas();
+        showHideMenu();
 
         const medias = document.querySelectorAll('.gallery_container article');
         medias.forEach((media, index) => {
